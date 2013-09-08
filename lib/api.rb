@@ -37,14 +37,16 @@ end
 
 class Members < API
 
+  # Example: http://api.nytimes.com/svc/politics/v3/us/legislative/congress/109/house/members?state=CA&district=4.xml
   def self.lists(congress_number, chamber, state=nil, district=nil)
     if state.nil? && district.nil?
       "#{congress_number}/#{chamber}/members#{FORMAT}&api-key=#{API_KEY}"
     elsif state.nil?
       "#{congress_number}/#{chamber}/members#{FORMAT}?district=#{district}&api-key=#{API_KEY}"
+    elsif district.nil?
+      "#{congress_number}/#{chamber}/members#{FORMAT}?state=#{state}&api-key=#{API_KEY}"
     else
-
-    else
+      "#{congress_number}/#{chamber}/members#{FORMAT}&api-key=#{API_KEY}" # FIXME: takes no optional params yet
     end
   end
 
