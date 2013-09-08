@@ -39,9 +39,9 @@ class Members < API
 
   def self.lists(congress_number, chamber, state=nil, district=nil)
     if state.nil? && district.nil?
-      "#{congress_number}/#{chamber}/members#{FORMAT}?[optional-params]&api-key=#{API_KEY}"
+      "#{congress_number}/#{chamber}/members#{FORMAT}&api-key=#{API_KEY}"
     elsif state.nil?
-
+      "#{congress_number}/#{chamber}/members#{FORMAT}?district=#{district}&api-key=#{API_KEY}"
     else
 
     else
