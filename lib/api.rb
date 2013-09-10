@@ -46,7 +46,7 @@ class Members < API
     elsif district.nil?
       "#{congress_number}/#{chamber}/members#{FORMAT}?state=#{state}&api-key=#{API_KEY}"
     else
-      "#{congress_number}/#{chamber}/members#{FORMAT}&api-key=#{API_KEY}" # FIXME: takes no optional params yet
+      "#{congress_number}/#{chamber}/members?state=#{state}&district=#{district}#{FORMAT}&api-key=#{API_KEY}"
     end
   end
 
