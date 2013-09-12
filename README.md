@@ -1,39 +1,39 @@
 ##Congress-It       [![Code Climate](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI.png)](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI)
 
 ### Ruby Gem for interfacing with The New York Times Congress API
--------------
+===================
 
-####Members Methods
+Members Methods
+-------------------
+#####Member Lists
 
-######Member Lists
-Note: when passing district as an argument, state must also be present.
 ```
 Members.lists(congress_number, chamber, state=nil, district=nil)
 
     congress_number = 102–113 (House of Representatives)
                        80–113 (Senate)
-                       
             chamber = "house" or "senate"
-            
    state (optional) = Two-letter state code, ex. "CA", "OR", "NY"
-   
 district (optional) = House of Representatives district number
 ```
+######Notes 
+When passing district as an argument, state must also be present.
 
-######Member Bio & Roles
+#####Member Bio & Roles
 ```
 Members.bio_and_roles(member_id)
 
 member_id = Alphanumeric
 ```
+######Notes
+member_id is returned by the Members.lists method.
 
-######List of New Members
+#####List of New Members
 ```
 Members.new_members
 ```
 
 ######Current Members by State or District
-Note: district is only required when querying House members
 ```
 Members.current_members_by_state_or_district(chamber, state, district=nil)
 
@@ -41,19 +41,42 @@ chamber  = "house" or "senate"
 state    = Two-letter state code, ex. "CA", "OR", "NY"
 district = House of Representatives district number
 ```
+######Notes
+District is only required when querying House members.
 
-####Votes Methods
-
-######Roll-Call Votes
+Votes Methods
+-------------
+#####Roll-Call Votes
 ```
 Votes.roll_call(congress_number, chamber, session_number, roll_call_number)
+
+ congress_number = 102–113 (House of Representatives)
+                    80–113 (Senate)
+         chamber = "house" or "senate"
+  session_number = 1 | 2 | [special session number]
+roll_call_number = Integer
+```
+######Notes
+A detailed list of Congressional Sessions and their numbers can be found at this address:
+```
+http://www.senate.gov/reference/resources/pdf/congresses2.pdf
+```
+Roll-call numbers can be found on the official U.S. Senate and House websites:
+```
+Senate: http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm
+ House: http://clerk.house.gov/art_history/house_history/index.html
 ```
 
-######Votes by Type
+
+#####Votes by Type
 ```
 Votes.votes_by_type(congress_number, chamber, vote_type)
 ```
 
-######Votes by Date
+#####Votes by Date
 
-######Nomination Votes
+#####Nomination Votes
+
+
+Bills Methods
+-------------
