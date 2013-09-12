@@ -42,9 +42,7 @@ class Members < API
     if state.nil? && district.nil?
       "#{congress_number}/#{chamber}/members#{FORMAT}&api-key=#{API_KEY}"
     elsif state.nil?
-      "#{congress_number}/#{chamber}/members#{FORMAT}?district=#{district}&api-key=#{API_KEY}"
-    elsif district.nil?
-      "#{congress_number}/#{chamber}/members#{FORMAT}?state=#{state}&api-key=#{API_KEY}"
+      # FIXME: raise exception when district is passed as an argument without a state also
     else
       "#{congress_number}/#{chamber}/members?state=#{state}&district=#{district}#{FORMAT}&api-key=#{API_KEY}"
     end
@@ -59,10 +57,12 @@ class Members < API
   end
 
   def self.current_members_by_state_or_district(chamber, state, district=nil)
-    if district.nil?
-      "members/#{chamber}/#{state}/current"
+    if (chamber.downcase == "house" && district.nil?)
+      # FIXME: raise exception when house is passed as an argument without a district also
+    elsif chamber.downcase == "senate"
+      "members/senate/#{state}/current"
     else
-      "members/#{chamber}/#{state}/#{district}/current"
+      "members/house/#{state}/#{district}/current"
     end
   end
 
@@ -118,8 +118,10 @@ class Votes < API
 end
 
 class Bills < API
-  class << self
-  end
+  # TODO: use this technique to allow for leaving out self in method names
+  #
+  # class << self
+  # end
 
   def self.recent_bills
     "#{congress_number}/#{chamber}/bills/#{type}"
