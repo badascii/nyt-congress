@@ -115,12 +115,27 @@ congress_number =
 
 Bills Methods
 -------------
-######Recent Bills
+#####Recent Bills
+```
+Bills.recent
+```
 
-######Bills by Member
+#####Bills by Member
+```
+Bills.by_member
+```
 
 #####Bill Details
+```
+Bills.bill_details(congress_number, bill_id)
+```
 
 #####Bill Subjects/Amendments and Related Bills
+```
+Bills.subjects_amendments_and_related_bills(congress_number, bill_id, resource)
+```
 
 #####Bill Cosponsors
+```
+Bills.cosponsors(congress_number, bill_id)
+```
