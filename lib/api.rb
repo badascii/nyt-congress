@@ -123,11 +123,11 @@ class Bills < API
   # class << self
   # end
 
-  def self.recent_bills
+  def self.recent
     "#{congress_number}/#{chamber}/bills/#{type}"
   end
 
-  def self.bills_by_member
+  def self.by_member
     "members/#{member_id}/bills/#{type}"
   end
 
