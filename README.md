@@ -31,12 +31,12 @@ member_id = Alphanumeric
 ######Notes
 member_id is returned by the Members.lists method.
 
-#####List of New Members
+#####List New Members
 ```
 Members.new_members
 ```
 
-######Current Members by State or District
+#####Current Members by State or District
 ```
 Members.current_members_by_state_or_district(chamber, state, district=nil)
 
