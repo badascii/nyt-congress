@@ -1,6 +1,6 @@
-##Congress-It       [![Code Climate](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI.png)](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI)
+##NYT Congress API Interface     [![Code Climate](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI.png)](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI)
 
-### Ruby Gem for interfacing with The New York Times Congress API
+### Ruby Gem that allows for easy queries of The New York Times Congress API
 ===================
 
 Members Methods
