@@ -1,9 +1,12 @@
-##NYT Congress API Interface     [![Code Climate](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI.png)](https://codeclimate.com/github/badascii/NewYorkTimes-CongressAPI)
+##NYT Congress API  [![Code Climate](https://codeclimate.com/github/badascii/nyt-congress.png)](https://codeclimate.com/github/badascii/nyt-congress)
 
-### Ruby Gem that allows for easy queries of The New York Times Congress API
+### Ruby Gem that allows for easily querying The New York Times Congress API
+===================
+===================
+Available Methods:
 ===================
 
-Members Methods
+Member Queries
 -------------------
 #####Member Lists
 
@@ -44,7 +47,7 @@ district = House of Representatives district number
 ######Notes
 District is only required when querying House members.
 
-Votes Methods
+Vote Queries
 -------------
 #####Roll-Call Votes
 ```
@@ -113,7 +116,7 @@ Votes.senate_nomination_votes(congress_number)
 congress_number = 
 ```
 
-Bills Methods
+Bill Queries
 -------------
 #####Recent Bills
 ```
