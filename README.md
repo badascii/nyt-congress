@@ -3,11 +3,9 @@
 ##### Simple querying of The New York Times Congress API
 -------------------
 
-#####Available Methods:
+####Available Methods:
 ===================
-
 ###Member Queries
--------------------
 #####Member Lists
 
 ```ruby
@@ -51,7 +49,6 @@ district = House of Representatives district number
 District is only required when querying House members.
 
 ###Vote Queries
--------------
 #####Roll-Call Votes
 ```ruby
 Votes.roll_call(congress_number, chamber, session_number, roll_call_number)
@@ -124,7 +121,6 @@ congress_number =
 ```
 
 ###Bill Queries
--------------
 #####Recent Bills
 ```ruby
 Bills.recent
