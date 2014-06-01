@@ -1,6 +1,6 @@
 ##NYT Congress API [![Code Climate](https://codeclimate.com/github/badascii/nyt-congress.png)](https://codeclimate.com/github/badascii/nyt-congress)
 
-##### Simple querying of The New York Times Congress API
+##### Simple Ruby querying of The New York Times Congress API
 -------------------
 
 ####Available Methods:
